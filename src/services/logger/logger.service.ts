@@ -1,4 +1,4 @@
-import { ILoggerService } from '@app/shared/interfaces/services/logger/logger.interface';
+import { ILoggerService } from '@app/nestjs-microservices-tools/interfaces/services/logger/logger.interface';
 import { Injectable, Logger } from '@nestjs/common';
 
 @Injectable()

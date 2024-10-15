@@ -1,4 +1,4 @@
-import { IApiGatewayInitializerService } from '@app/shared/interfaces/config/api-gateway-initializer/api-gateway-initializer.service.interface';
+import { IApiGatewayInitializerService } from '@app/nestjs-microservices-tools/interfaces/config/api-gateway-initializer/api-gateway-initializer.service.interface';
 import { type INestApplication, Inject, Injectable, ValidationPipe } from '@nestjs/common';
 import { AllExceptionFilter } from '../../filters/exception.filter';
 import { LoggingInterceptor } from '../../interceptors/logger.interceptor';
