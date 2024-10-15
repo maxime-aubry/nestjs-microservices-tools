@@ -1,7 +1,7 @@
-import { beforeEach, describe, expect, it } from 'bun:test';
+import { IEnvironmentConfiguration } from '@app/shared/interfaces/config/environment-config/environment-config.service.interface';
+import { IMessageQueueConfiguration } from '@app/shared/interfaces/config/environment-config/message-queue-config.service.interface';
 import { Test, type TestingModule } from '@nestjs/testing';
-import type { IEnvironmentConfiguration } from 'src/interfaces/config/environment-config/environment-config.service.interface';
-import type { IMessageQueueConfiguration } from 'src/interfaces/config/environment-config/message-queue-config.service.interface';
+import { beforeEach, describe, expect, it } from 'bun:test';
 import { EnvironmentConfigModule } from './environment-config.module';
 import { EnvironmentConfigService } from './environment-config.service';
 

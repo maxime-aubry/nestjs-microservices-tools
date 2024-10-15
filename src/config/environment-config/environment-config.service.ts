@@ -1,6 +1,6 @@
+import { IEnvironmentConfiguration } from '@app/shared/interfaces/config/environment-config/environment-config.service.interface';
 import { Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { IEnvironmentConfiguration } from 'src/interfaces/config/environment-config/environment-config.service.interface';
 
 @Injectable()
 export class EnvironmentConfigService implements IEnvironmentConfiguration {
@@ -27,6 +27,6 @@ export class EnvironmentConfigService implements IEnvironmentConfiguration {
   }
 
   public getMessageQueueUrl(): string {
-    return `amqp://${this.getMessageQueueUser()}:${this.getMessageQueuePass()}@${this.getMessageQueueHost()}`;
+    return this.configService.get<string>('RABBITMQ_URI');
   }
 }
