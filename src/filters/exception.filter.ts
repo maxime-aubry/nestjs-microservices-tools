@@ -1,7 +1,7 @@
 import { type ArgumentsHost, Catch, type ExceptionFilter, HttpException, HttpStatus } from '@nestjs/common';
 import type { HttpArgumentsHost } from '@nestjs/common/interfaces';
 import type { Request, Response } from 'express';
-import type { ILoggerService } from '../interfaces/services/logger/logger.interface';
+import type { ILoggerService } from '../services/logger/logger.interface';
 
 interface IError {
   message: string;

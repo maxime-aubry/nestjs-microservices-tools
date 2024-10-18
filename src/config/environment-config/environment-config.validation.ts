@@ -16,12 +16,14 @@ class EnvironmentVariables {
     rabbitMqPass: string,
     rabbitMqHost: string,
     rabbitMqAuthQueue: string,
+    rabbitMqUri: string,
   ) {
     this.NODE_ENV = nodeEnv;
     this.RABBITMQ_USER = rabbitMqUser;
     this.RABBITMQ_PASS = rabbitMqPass;
     this.RABBITMQ_HOST = rabbitMqHost;
     this.RABBITMQ_AUTH_QUEUE = rabbitMqAuthQueue;
+    this.RABBITMQ_URI = rabbitMqUri;
   }
 
   @IsEnum(Environment)
@@ -38,6 +40,21 @@ class EnvironmentVariables {
 
   @IsString()
   RABBITMQ_AUTH_QUEUE: string;
+
+  @IsString()
+  RABBITMQ_URI: string;
+
+  @IsString()
+  JWT_SECRET: string;
+
+  @IsString()
+  JWT_EXPIRATION_TIME: string;
+
+  @IsString()
+  JWT_REFRESH_TOKEN_SECRET: string;
+
+  @IsString()
+  JWT_REFRESH_TOKEN_EXPIRATION_TIME: string;
 }
 
 export function validate(config: Record<string, unknown>): EnvironmentVariables {

@@ -3,7 +3,7 @@ import type { HttpArgumentsHost } from '@nestjs/common/interfaces';
 import type { Request } from 'express';
 import type { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import type { ILoggerService } from '../interfaces/services/logger/logger.interface';
+import type { ILoggerService } from '../services/logger/logger.interface';
 
 @Injectable()
 export class LoggingInterceptor implements NestInterceptor {

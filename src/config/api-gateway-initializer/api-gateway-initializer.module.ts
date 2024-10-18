@@ -1,9 +1,11 @@
-import type { IMessageQueueConfiguration } from '@app/nestjs-microservices-tools/interfaces/config/environment-config/message-queue-config.service.interface';
+import { LoggerModule } from '@app/nestjs-microservices-tools/services/logger';
 import { type DynamicModule, Module, type Provider } from '@nestjs/common';
 import { ClientProxyFactory, Transport } from '@nestjs/microservices';
-import { LoggerModule } from '../../services/logger/logger.module';
-import { EnvironmentConfigModule } from '../environment-config/environment-config.module';
-import { EnvironmentConfigService } from '../environment-config/environment-config.service';
+import {
+  EnvironmentConfigModule,
+  EnvironmentConfigService,
+  type IMessageQueueConfiguration,
+} from '../environment-config';
 import { ApiGatewayInitializerService } from './api-gateway-initializer.service';
 
 @Module({

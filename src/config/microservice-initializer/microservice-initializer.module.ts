@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { EnvironmentConfigModule } from '../environment-config/environment-config.module';
+import { EnvironmentConfigModule } from '../environment-config';
 import { MicroserviceInitializerService } from './microservice-initializer.service';
 
 @Module({

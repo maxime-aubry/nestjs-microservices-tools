@@ -1,8 +1,7 @@
-import type { IMessageQueueConfiguration } from '@app/nestjs-microservices-tools/interfaces/config/environment-config/message-queue-config.service.interface';
-import type { IMicroserviceInitializerService } from '@app/nestjs-microservices-tools/interfaces/config/microservice-initializer/microservice-initializer.service.interface';
 import { type INestApplication, Inject, Injectable } from '@nestjs/common';
 import { type RmqOptions, Transport } from '@nestjs/microservices';
-import { EnvironmentConfigService } from '../environment-config/environment-config.service';
+import { EnvironmentConfigService, type IMessageQueueConfiguration } from '../environment-config';
+import type { IMicroserviceInitializerService } from './microservice-initializer.service.interface';
 
 @Injectable()
 export class MicroserviceInitializerService implements IMicroserviceInitializerService {

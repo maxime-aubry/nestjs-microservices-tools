@@ -1,6 +1,6 @@
-import type { IMessageQueueService } from '@app/nestjs-microservices-tools/interfaces/services/messageQueue/message-queue.service.interface';
 import { Injectable } from '@nestjs/common';
 import type { RmqContext } from '@nestjs/microservices';
+import type { IMessageQueueService } from './message-queue.service.interface';
 
 @Injectable()
 export class MessageQueueService implements IMessageQueueService {

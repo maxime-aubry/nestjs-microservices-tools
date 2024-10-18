@@ -1,10 +1,10 @@
-import type { IApiGatewayInitializerService } from '@app/nestjs-microservices-tools/interfaces/config/api-gateway-initializer/api-gateway-initializer.service.interface';
 import { type INestApplication, Inject, Injectable, ValidationPipe } from '@nestjs/common';
 import { AllExceptionFilter } from '../../filters/exception.filter';
 import { LoggingInterceptor } from '../../interceptors/logger.interceptor';
 import { ResponseInterceptor } from '../../interceptors/response.interceptor';
-import type { ILoggerService } from '../../interfaces/services/logger/logger.interface';
+import type { ILoggerService } from '../../services/logger/logger.interface';
 import { LoggerService } from '../../services/logger/logger.service';
+import type { IApiGatewayInitializerService } from './api-gateway-initializer.service.interface';
 
 @Injectable()
 export class ApiGatewayInitializerService implements IApiGatewayInitializerService {

@@ -1,5 +1,5 @@
-import type { ILoggerService } from '@app/nestjs-microservices-tools/interfaces/services/logger/logger.interface';
 import { Injectable, Logger } from '@nestjs/common';
+import type { ILoggerService } from './logger.interface';
 
 @Injectable()
 export class LoggerService extends Logger implements ILoggerService {
