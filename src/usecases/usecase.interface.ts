@@ -1,3 +1,3 @@
 export interface IUseCase<TRequest, TResponse> {
-  execute: (request: TRequest) => TResponse;
+  execute: (request?: TRequest) => TResponse;
 }

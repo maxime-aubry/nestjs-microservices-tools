@@ -1,13 +1,6 @@
-import { IJwtRefreshTokenGenerator } from './jwt-refresh-token-generator.interface';
-import { JwtRefreshTokenGeneratorService } from './jwt-refresh-token-generator.service';
-import { IJwtTokenGenerator } from './jwt-token-generator.interface';
-import { JwtTokenGeneratorService } from './jwt-token-generator.service';
+import { JwtPayload } from './jwt-payload';
+import { JwtService } from './jwt-token.service';
 import { JwtModule } from './jwt.module';
+import { TokensBundle } from './tokens-bundle';
 
-export {
-  IJwtRefreshTokenGenerator,
-  IJwtTokenGenerator,
-  JwtModule,
-  JwtRefreshTokenGeneratorService,
-  JwtTokenGeneratorService,
-};
+export { JwtModule, JwtPayload, JwtService, TokensBundle };

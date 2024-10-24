@@ -1,18 +1,28 @@
-import { EnvironmentConfigModule } from '@app/nestjs-microservices-tools/config';
+import {
+  EnvironmentConfigModule,
+  EnvironmentConfigService,
+  type IJwtConfiguration,
+} from '@app/nestjs-microservices-tools/config/environment-config';
 import { Module } from '@nestjs/common';
 import { JwtModule as Jwt } from '@nestjs/jwt';
-import { JwtRefreshTokenGeneratorService } from './jwt-refresh-token-generator.service';
-import { JwtTokenGeneratorService } from './jwt-token-generator.service';
+import { JwtService } from './jwt-token.service';
 
 @Module({
   imports: [
-    Jwt.register({
-      secret: process.env.JWT_SECRET,
-      signOptions: { expiresIn: '24h' },
+    Jwt.registerAsync({
+      useFactory: (jwtConfig: IJwtConfiguration) => {
+        return {
+          secret: jwtConfig.getJwtSecret(),
+          signOptions: {
+            expiresIn: jwtConfig.getJwtExpirationTime(),
+          },
+        };
+      },
+      inject: [EnvironmentConfigService],
     }),
     EnvironmentConfigModule,
   ],
-  providers: [JwtRefreshTokenGeneratorService, JwtTokenGeneratorService],
-  exports: [JwtRefreshTokenGeneratorService, JwtTokenGeneratorService],
+  providers: [JwtService],
+  exports: [JwtService],
 })
 export class JwtModule {}
